@@ -1,12 +1,16 @@
 Awesome code
 html, body {
-  padding: 0 0 0 0;
-  margin: 0;
-  font-family:'Helvetica', 'Arial', 'Sans';
+    padding: 0 0 0 0;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 105px;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
 }
 
 h1,h2,h3,h4 {
-  font-family:'Helvetica', 'Arial', 'Sans';
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+    color: #FFFFFF;
   }
 
 
@@ -15,9 +19,10 @@ a {
 }
 
 .header {
-  background: #fff;
-  color: #000;
-  height: 500px;
+  color: #fff;
+  width: 800px;
+  height: 200
+	  px;
   padding: 30px 30px 30px;
 }
 
@@ -29,11 +34,17 @@ a {
   font-size: 12px;
   line-height: 24px;
   font-family: 'Helvetica', 'Arial', 'Sans';
-  padding: 20px 20px 20px 30px;
-  width: 250px;
+  //padding: 20px 20px 20px 30px;
+  width: 200px;
   height: 350px;
   float: left;
 }
+
+.bigletter{
+  font-size: 36px;
+  font-family: 'Helvetica'
+}
+
 
 .assignment a {
     color: #000;
@@ -41,9 +52,9 @@ a {
 }
 
 .assignment a:hover {
-  background: #F06;
-  color: #F06;
-  text-decoration: none;
+    background: #F06;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 
@@ -63,7 +74,6 @@ a {
 
 .widebody a:hover {
   background: #F06;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
-
