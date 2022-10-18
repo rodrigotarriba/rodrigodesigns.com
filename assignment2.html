@@ -12,13 +12,53 @@
     <body> 
 
         <div class="header">
-            <h1>Example Student's Assignment 2!</h1>
-            <p>
-            <img src="red-panda.jpg" width=400></a>
-            </p>
-            <p>
-            Here is all the documentation for assignment 2!
-            </p>
+          <h1>A02: Grasshopper!</h1>
+          <p>&nbsp;</p>
+            <p>In this instance, our objective was to create a grasshopper definition that would allow us to modify the proposed final shape parametrically. </p>
+            <p>In this case, I am grabbing a reference from these wave-like sculptures and architectural details that are more ubiquous lately. They seem to follow a direction of movement.</p>
+            <p>&nbsp;</p>
+            <p></a>
+            <img src="A2/A02_A2_reference.jpg" width="714" height="393" alt=""/></p>
+            <p>For this purpose, we will create a squared shape to be hanged on a wall. All values will be parametrized, before baking. Only the arranging of the pieces for laser cutting will be manual as last step in the process.</p>
+            <p>&nbsp;</p>
+            <p>1. We begin by creating a rectangle, selecting one of its sides and dividing it in a specific number of points, in this case 10. We evaluate the isocurves involved in a referenced plane of the rectangle at each of the points, and extrude them down toe create the ribs.</p>
+            <p><img src="A2/A02_03.jpg" width="730" height="429" alt=""/></p>
+            <p>&nbsp;</p>
+            <p>2.We divide those curves into a new number of points, these will be the individual pieces spread throughout the surface.</p>
+            <p><img src="A2/A02_04.jpg" width="730" height="454" alt=""/></p>
+            <p>&nbsp;</p>
+          <p>3. Create teh cutting shape that will be enabling the shapes to be inserted in the ribs. We make sure to add a circle slightly larger than the rectangle's width, to allow easy insertion of the pieces into the cardboard.</p>
+            <p><img src="A2/A00.png" width="728" height="374" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>4. Then we evaluate each of the ribs at the intersection point, and orient one of these modules in that location.</p>
+          <p><img src="A2/A02_06.jpg" width="734" height="457" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>5.The next step was the most challenging one. In order to rotate the modules, we need to define a leading parameter that might make them different from each other. In this case, we want to do it by distance. We create a curve that goes through the middle, and the shapes will rotate depending of their proximity, by a factor of the longest distance to the curve.</p>
+          <p>&nbsp;</p>
+          <p>(In the 3D renderings below, I temporarily replaced the splitting shape for the final circles to be cut, in order to visualize how would each iteration look)</p>
+          <p><img src="A2/A02_07.jpg" width="735" height="466" alt=""/></p>
+          <p><img src="A2/A02_08.jpg" width="735" height="430" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>6. However, this was not the effect I had wished for, I wanted this to look more like a spike, rather than a &quot;wave&quot;. Hence, when the shapes cross the curve, they should still be aligned in direction of the curve. We solved this by evaluating which point is furthest in the X axis (the curve's closest point, or the projecting point) and multiplying its rotation by -1 if the curve was on its left, rather than its right side.</p>
+          <p><img src="A2/A02_10.jpg" width="730" height="457" alt=""/></p>
+          <p><img src="A2/A02_09.jpg" width="732" height="439" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>7.After achieving the right rotations, we use intersect to remove the insertion shape from each of the ribs. And with this, the piece is ready for laser cutting and ensamblage.</p>
+          <p><img src="A2/A02_11.jpg" width="729" height="450" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>8. Most of this process of arranging in the sheet is done by hand, including crafting a final module shape that we are interested in. These sheet fit inside a 20&quot; x 11.5&quot; laser cutting machine.</p>
+          <p><img src="A2/CutSheet.png" width="779" height="903" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>9. Pending laser cut result!</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>Assignemnt Files:</p>
+          <p><a href="A2/A2_GH Script_Rodrigo Tarriba.gh">Grasshopper Definition</a></p>
+          <p><a href="A2/A2_CutSheet_RodrigoTarriba.3dm">Rhino Cut Sheets</a></p>
         </div>
         
     </body>
