@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Example Student's HCDE 439 Physical Computing Page!</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head> 
+    <body> 
+
+        <div class="header">
+          <h1>A05: READY PLAYER MESH!</h1>
+          <p>Combining meshes for 3D printing can be a challenging effort, especially if found elsewhere and trying to re-adapt them. This study uses a custom-made 3D avatar, blends it with several meshes inside of Rhino, and prints it in 3D as a healthy STL!</p>
+          <p>&nbsp;</p>
+          <p><strong>-- OBJECTIVE --            </strong></p>
+          <p>For this purpose, I wanted to personalize the study. I created a mesh avatar in <a href="https://readyplayer.me">ReadyPlayerMe</a>. I customized all designelements the way I wanted them and imported the mesh into Rhino.</p>
+          <p>For the second set of meshes, I chose my first study in 3D Printing, a box frame. I wanted to create the illusion that the avatar is inside the box.</p>
+          <p>&nbsp;</p>
+          <p><img src="A5/00_ReadyPlayerrMe.jpg" width="777" height="837" alt=""/></p>
+          <p><img src="A5/00_MeshesInRhino.jpg" width="772" height="745" alt=""/></p>
+          <p>&nbsp;</p>
+          <p><strong>-- BOOLEAN <s>MESS</s> MESH! -- </strong></p>
+          <p>While this is a pretty straightoforward task, the biggest hurdle was preparing the ReadyPlayerMe Avatar for boolean operations. It is not a solid, feet, pants, sweater, hands, head, and even hair, are opened meshes. I spent a good amount of time extending geometry and drawing triangles.</p>
+          <p>The most useful method I followed was this:</p>
+          <p>1. Convert all meshes to NURBS.</p>
+          <p>2. Extend the polysurfaces naked edges until they are ALL inside another joining polysurface.</p>
+          <p>3. Split both polysurfaces using each other as splitting shape.</p>
+          <p>4. Join polysurfaces ignoring cut-off pieces (the surfaces that remained inside of the splitting polysurface)</p>
+          <p><img src="A5/tracking1.gif" width="788" height="774" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>The hardest part to modify was the shoe, since it had a ton of non-manifold edges and intrinsic shapes. But I managed to cap the hole on top in order for the leg to intersect nicely and be able to merge them.</p>
+          <p><img src="A5/02_ShoesMeshes.jpg" width="779" height="664" alt=""/></p>
+          <p><img src="A5/02b_ShoeJoined.jpg" width="779" height="716" alt=""/></p>
+          <p>The biggest problem was the head and hair. They were composed of too many opened meshes that was impossible to join together. I gave up trying to fix it, and proceeded to smooth the surface in different iterations, first back to mesh, then to quad, then quad remesh in multiple occasions until a good balance was achieved.</p>
+          <p><img src="A5/02c_MeshyMeshy.jpg" width="791" height="356" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>-- DESIGN.ME-- </p>
+          <p>Not being able to work with the hair brought an interesting constraint. I decided to hide the character inside a box full of balloons. Akin to a grown up throwing himself inside the plastic balls at the supermarket! </p>
+          <p>&nbsp;</p>
+          <p><img src="A5/02d_Designnie.jpg" width="785" height="726" alt=""/></p>
+          <p>&nbsp;</p>
+          <p><strong>-- 3DPRINT.ME -- </strong></p>
+          <p>I wanted to ensure I could slice this with CURA and 3D print it. But I realized the shape was too complicated, with many overhangs and interior zones. I had to add a few more balls to fake the bridging distance between one side and the other.</p>
+          <p><img src="A5/02e_Overhangs.jpg" width="795" height="747" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>I finally went through the process of boolean-joining everything, which was very fast thanks to the Avatar being a solid, including my frame and the regular Rhino spheres. </p>
+          <p>In order to save some material, I had to offset the surface of all the balls a bit and use it as empty space inside the model.</p>
+          <p>Here we can see the mesh without the intersections inside, I have no torso or head anymore, and there is a big empty space in the middle. I also had to cut the spheres overlapping with the floor for this to print straight as a standing element.</p>
+          <p><img src="A5/02f_Section.jpg" width="792" height="736" alt=""/></p>
+          <p>&nbsp;</p>
+          <p><strong>-- FINAL RESULT -- </strong></p>
+          <p>I wanted this to print 30 cm tall. But CURA said it would finish around christmas. So I did a minuature that ended up working perfectly upside down or standing! Pretty happy with the result.</p>
+          <p><img src="A5/Photo_06.jpg" width="780" height="780" alt=""/></p>
+          <p><img src="A5/Photo_02.jpg" width="782" height="1040" alt=""/></p>
+          <p><img src="A5/Photo_04.jpg" width="781" height="781" alt=""/></p>
+          <p><img src="A5/Photo_00.jpg" width="776" height="776" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>Source Files:</p>
+          <p><a href="A5/ReadyPlayer_Rhino.3dm">RhinoModel_3DM</a></p>
+          <p><a href="A5/ReadyPlayerMe_STL.stl">Mesh_STL</a></p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </div>
+        
+    </body>
+</html>
