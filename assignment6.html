@@ -22,7 +22,7 @@
           <p><img src="A6/01_LED Width.jpg" width="762" height="762" alt=""/></p>
           <p>&nbsp;</p>
           <p><strong>-- FIRST TEST -- </strong></p>
-          <p>The biggest challenge in the creation of the lamp is ensuring a consistent diffusion of the light. Each LED is separated by a fixed distance, if the 3D printed enclosure is too close to the surface of the LEDs, or doesnt have the appropiate thickness to diffuse the light, it will be too noticeable and not to pleasant to look at.</p>
+          <p>The biggest challenge in the creation of the lamp is ensuring a consistent diffusion of the light. Each LED is separated by a fixed distance, if the 3D-printed enclosure is too close to the surface of the LEDs, or doesnt have the appropiate thickness to diffuse the light, it will be too noticeable and not to pleasant to look at.</p>
           <p><img src="A6/02_LEDDIagram.jpg" width="768" height="696" alt=""/></p>
           <p>&nbsp;</p>
           <p>I am using transparent PETG filament. I 3D printed this enclosure, however, I quickly learned that the infill structure was a bit too noticeable to the exterior. I am looking for a truly diffusive look and this did not give the results I wanted.</p>
@@ -33,9 +33,47 @@
           <p><strong>-- SECOND TEST --</strong></p>
           <p>For the second test, I narrowed the thickness of the tube. I also did solid walls, with 6 layers. However, even when using that high amount of walls, it did not diffuse the light the right way.          </p>
           <p><img src="A6/04_LED_Test02.jpg" width="786" height="786" alt=""/></p>
-          <p><img src="A6/Photos/2022-11-15 18_16_54-Research50_XR_2022-11-10 12-19-11.mkv - VLC media player.jpg" width="789" height="781" alt=""/></p>
-          <p><img src="A6/Photos/2022-11-10 18_46_01-Window.jpg" width="785" height="700" alt=""/><img src="A6/Photos/123222.jpg" width="791" height="1399" alt=""/><img src="A6/Photos/msg-14280766-346476.jpg" width="793" height="1057" alt=""/><img src="A6/Photos/msg-14280766-346474.jpg" width="789" height="1052" alt=""/><img src="A6/Photos/123123123.jpg" width="779" height="1173" alt=""/><img src="file:///C|/Users/rodrigo.tarriba/Desktop/Screenshots/2022-11-15 08_19_53-Window.jpg" width="783" height="765" alt=""/></p>
-          <p><img src="A6/Photos/msg-14280766-346469 (1).jpg" width="756" height="567" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>--VR SWIRLS -- </p>
+          <p>Attempting to sketch the shape I wanted in Rhino didn't feel very natural. I could dictate where I wanted the points, but I would always look great from one side and skewed from the next. </p>
+          <p>I decided to try Gravity Sketch in VR see if I could create a draft that could later be tweaked in rhinoceros.</p>
+          <p>&nbsp;</p>
+          <p><img src="A6/VRSketching.gif" width="692" height="680" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>Ta da! Pretty happy with the final shape. </p>
+          <p><img src="A6/Photos/2022-11-10 18_46_01-Window.jpg" width="785" height="700" alt=""/></p>
+          <p>Now it was time to transfer into Rhino and tweak a few things before 3DPrinting.</p>
+          <p>I traced the main points of the VR doodle, then used grasshopper to automaticlaly interpolate between the points with a 3-degree nurb curve.THe curve was then used to create 2 sets of pipe, an internal (where the LED would flow, and an external, which is what is seen below.)</p>
+          <p><img src="A6/2022-11-17 00_28_13-01_Swirl_04.3dm (138 MB) - Rhinoceros 7 Commercial - [Perspective].jpg" width="787" height="656" alt=""/></p>
+          <p><img src="A6/2022-11-17 00_31_15-01_Swirl_04.3dm (138 MB) - Rhinoceros 7 Commercial - [Perspective].jpg" width="788" height="727" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>-- 3D PRINTING --</p>
+          <p>While I wanted to print it all at once and avoid any joint marks, I realized the risk unrecoverable failure was too big. By splitting the sections, we had more room for error.</p>
+          <p>Total print time was approximately 50 hours. Especially since infill had to be a bit heavier than usual to attempt a more favorable diffusion (and even then, its not market-standard level of diffusion yet.)</p>
+          <p>&nbsp;</p>
+          <p>Needless to say, seeing this curvy shapes print was very satistfying. <img src="A6/2022-11-17 01_22_09-01_Swirl_04.3dm (138 MB) - Rhinoceros 7 Commercial - [Perspective].jpg" width="786" height="549" alt=""/></p>
+          <p><img src="A6/Photos/123222.jpg" width="791" height="1399" alt=""/></p>
+          <p><img src="A6/Photos/PiecesTogether.jpg" width="790" height="836" alt=""/></p>
+          <p>-- 6 Feet Above Ground -- </p>
+          <p>I norder to achieve joining all pieces, I created an internal joint unique to each section of the loop. Grasshopper would automatically choose a t spot in the forming curve, offset it a few mm. to each side, split the section with circular planes and create pipes that are smaller than the main one. </p>
+          <p>Then, it would substract the space covered by these joints from the main pipe, to guarantee a perfect match.</p>
+          <p><img src="A6/Photos/msg-14280766-346474.jpg" width="789" height="1052" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>--Techie Stuff --          </p>
+          <p>This was a very tight system - the inner loop had only 13 - 14 mm. of clearance and the LED strip was 11 mm. I had to keep the LEDs on while I was putting the loops together.</p>
+          <p>In order to reach the end of the loop, I put a wire on the LEDs and made a tiny hole in the 3D print, from which I pulled the LED to reach the end. The entire lamp had to be buillt along the LEDs, since scrolling them in after the fact would have been impossible. (I didnt know this at the time)<img src="A6/Photos/msg-14280766-346472.jpg" width="776" height="1034" alt=""/></p>
+          <p><img src="A6/Photos/123123123.jpg" width="779" height="1173" alt=""/></p>
+          <p>One of the biggest challenges was figuring out the main joint, the one that would hold the entire lamp, without making it too protruding. I extended a few flaps on each side to give it slightly more strength than the other joints, and I tapered the top (which is where the main power line comes from, to make sure that the lamp can't fall from the wires since their diameter beofre reaching the LEDs is wider.</p>
+          <p><img src="file:///C|/Users/rodrigo.tarriba/Desktop/Screenshots/2022-11-15 08_19_53-Window.jpg" width="783" height="765" alt=""/></p>
+          <p><img src="A6/Photos/msg-14280766-346473.jpg" width="775" height="1033" alt=""/></p>
+          <p>--The Results --</p>
+          <p>Here is the final lamp! Still lots to work on the programming to create teh type of animations I am looking for. But very happy with the diffusion, and the fact all pieces fit together and the lamp is self standing! Nice addition to my monstera too.<img src="A6/lamp_final1_green.jpg" width="794" height="794" alt=""/></p>
+          <p><img src="A6/lamp_final1.jpg" width="805" height="805" alt=""/></p>
+          <p><img src="A6/lamp_closeup.jpg" width="810" height="810" alt=""/></p>
+          <p>&nbsp;</p>
+          <p>Source Files:</p>
+          <p><a href="A6/Swirl_00.gh">Swirl_00.gh</a></p>
+          <p><a href="A6/A06_Rodrigo.3dm">A06_Rodrigo.3dm</a></p>
         </div>
         
     </body>
